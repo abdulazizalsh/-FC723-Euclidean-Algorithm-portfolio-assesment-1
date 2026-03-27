@@ -17,9 +17,14 @@ def calculate_gcd(number_1, number_2):
         #replaces the variable “number_2” with "remainder”
     return number_1  #returns the gcd
 
-#test variables
-first_number = 33
-second_number = 9
-
-result = calculate_gcd(first_number, second_number) #send the numbers and fetches the gcd
-print("GCD result >>", result) #prints the result
+#user interaction
+try:
+    first_number = int(input("enter first number: ")) #user inputs his number
+    second_number = int(input("enter second number: "))
+    if first_number <= 0 or second_number <= 0:
+        print("enter positive numbers")
+    else: 
+        result = calculate_gcd(first_number, second_number) #send the numbers and fetches the gcd
+        print("GCD result >>", result) #prints the result
+except ValueError:
+    print("enter a valid number")
